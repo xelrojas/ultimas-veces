@@ -42,15 +42,6 @@ No busca ponerte triste. Busca que la próxima última vez te encuentre prestand
 
 ![Imagen descargable en modo de día y de noche](capturas/imagen-para-descargar.png)
 
-## Los detalles que más disfruté hacer
-
-- **Una casita retro.** Papel beige, tinta azul marino, ventanas con barra de título de computadora vieja y el naranja que elegí desde el principio. Probé otras paletas, pero me quedé con el naranja: se sentía cálido, como estar en casa.
-- **Noche de lámparas.** Un modo nocturno con cielo índigo, semanas en amarillo cálido y la casita con luna y estrellas. Se activa solo si tu dispositivo está en modo oscuro o si es de noche, o con el botón de sol y luna. Tu elección se recuerda.
-- **Un personaje con vida.** Respira, parpadea, te saluda y camina por tu cuadrícula como en el mapa de un videojuego. En los recuerdos de infancia se ve como niño o niña, y al volver al presente recupera tu apariencia actual.
-- **Sonido 8-bit, opcional.** Efectos y una melodía chiptune generados en el navegador, sin archivos de audio. Empieza apagado, porque no a todos nos gusta que una página suene de repente.
-- **Te habla a ti.** El texto se adapta a cómo quieres que te hable (mujer, hombre o de forma neutra) solo en la gramática; las experiencias son las mismas para todas las personas.
-- **Para compartir sin exponerte.** El botón "Invitar a alguien" comparte un enlace limpio para que otra persona haga su propia cuadrícula. No lleva tu nombre, ni tu fecha, ni tus recuerdos.
-
 ## Cómo la construí
 
 Este proyecto lo hice con *vibecoding*: conversando con **Claude** como compañero de programación, describiendo lo que quería sentir en cada pantalla y revisando cada versión hasta que se sintiera bien. Lo guardé y lo publiqué con **GitHub**.
@@ -74,7 +65,6 @@ Lo que más me llevo: el código fue la parte fácil de explicar. Lo difícil, y
 - **Canvas** para dibujar el personaje y la casita pixel por pixel.
 - **Web Audio** para los sonidos 8-bit.
 - **Web Animations** para que el personaje camine por la cuadrícula.
-- **localStorage** para recordar tu avance en tu propio navegador.
 - **Fuentes alojadas en el proyecto:** Pixelify Sans para los títulos y Figtree para leer cómodo.
 - **Accesibilidad:** se puede usar solo con teclado, funciona con lectores de pantalla, cumple el contraste de colores AA y respeta la opción de "reducir movimiento" de tu dispositivo.
 
@@ -87,13 +77,6 @@ No hay servidor ni base de datos: **nada de lo que escribes sale de tu navegador
 Descarga o clona este repositorio y haz doble clic en `index.html`. No necesitas instalar nada.
 
 Para probar que el avance se recupera al recargar, ábrela con un servidor local (por ejemplo, la extensión **Live Server** de VS Code): algunos navegadores guardan de forma menos confiable cuando la página se abre como archivo.
-
-## Publícala gratis con GitHub Pages
-
-1. Crea un repositorio **público**, por ejemplo `vida-en-semanas`, y sube todos los archivos respetando las carpetas.
-2. Ve a **Settings → Pages**. En "Source" elige **Deploy from a branch**, la rama **main** y la carpeta **/ (root)**, y guarda.
-3. En uno o dos minutos quedará en `https://TU-USUARIO.github.io/vida-en-semanas/`.
-4. **Opcional, para que el enlace se vea bonito en WhatsApp y redes:** en `index.html` busca la línea comentada de `og:image`, cambia `TU-USUARIO` por tu usuario y quítale las marcas de comentario.
 
 ## Cómo está organizada
 
@@ -132,12 +115,9 @@ vida-en-semanas/
 - Las fuentes [Pixelify Sans](https://fonts.google.com/specimen/Pixelify+Sans) y [Figtree](https://fonts.google.com/specimen/Figtree) se usan bajo la licencia SIL Open Font License (incluida en `fonts/`).
 - Los textos, el personaje, la casita, la música y el diseño los hice para este proyecto, con ayuda de Claude.
 
-## Licencia
-
-Por ahora este repositorio no incluye una licencia. Si quieres usar parte del código, escríbeme. *(Si más adelante decido abrirlo, probablemente le ponga la licencia MIT.)*
 
 ## Sobre mí
 
-Soy ingeniera industrial y Project Manager de proyectos de software, desde Mérida, Yucatán. Me gusta entender cómo funcionan las cosas, ordenarlas y hacer que la gente las disfrute. Este proyecto fue mi primera vez construyendo algo así de personal con código, y no será la última.
+Soy ingeniera industrial y Project Manager de proyectos de software, desde México. Me gusta entender cómo funcionan las cosas, ordenarlas y hacer que la gente las disfrute. Este proyecto fue mi primera vez construyendo algo así de personal con código, y no será la última.
 
 Si la hiciste, me encantaría saber qué última vez te encontraste en tu cuadrícula. 🧡
