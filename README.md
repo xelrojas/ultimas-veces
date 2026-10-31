@@ -4,7 +4,7 @@
 
 ![Vista previa de Tu vida en semanas](img/vista-previa.png)
 
-👉 **Pruébala aquí:** `https://TU-USUARIO.github.io/vida-en-semanas/` <!-- cambia esta línea por tu enlace cuando la publiques -->
+👉 **Pruébala aquí:** https://xelrojas.github.io/ultimas-veces/ 
 
 ---
 
