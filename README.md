@@ -24,7 +24,7 @@ No busca ponerte triste. Busca que la próxima última vez te encuentre prestand
 2. **Tu cuadrícula.** Tus semanas vividas se encienden fila por fila y la de hoy parpadea. Lo que queda te lo digo a escala humana: fines de semana, Navidades y meses.
 3. **Últimas veces, en dos actos.** Primero la infancia ("Cuando todo era para siempre") y luego la juventud ("Cuando empezaste a darte cuenta"). Tu personaje camina por la cuadrícula hasta cada recuerdo y cambia de edad en el camino.
 4. **Las tuyas.** Una tarjeta a la vez me dices si ya viviste cada una y a qué edad. También puedes agregar recuerdos propios y elegir el color de tus semanas.
-5. **Una pausa.** Casi vacía, a propósito: *"Ninguna de estas despedidas fue anunciada. Las próximas tampoco lo serán."*
+5. **Una pausa.** *"Ninguna de estas despedidas fue anunciada. Las próximas tampoco lo serán."*
 6. **Lo que viene.** Escribes hasta tres cosas que quieres hacer por primera vez y aparecen como semillas en tus semanas futuras.
 7. **Una carta para ti.** Tu personaje en su casita y una carta que usa tus propias palabras. Puedes descargar tu cuadrícula como imagen e invitar a alguien a hacer la suya.
 
@@ -49,8 +49,8 @@ Este proyecto lo hice con *vibecoding*: conversando con **Claude** como compañe
 Fue creciendo por fases, y en cada una aprendí algo:
 
 1. **La idea base.** Primero escribí qué quería que la persona sintiera, antes de pensar en código.
-2. **El estilo.** La casita retro, el personaje pixel art y la paleta (aquí fue donde me quedé con el naranja).
-3. **El modo nocturno.** Comparé varias propuestas nostálgicas y elegí *Noche de lámparas*.
+2. **El estilo.** La casita retro, el personaje pixel art y la paleta de colores.
+3. **El modo nocturno.** Comparé varias propuestas nostálgicas y elegí una noche de lámparas.
 4. **Los textos y la historia.** Una narradora, tres actos, una pausa, números a escala humana y una carta íntima al final.
 5. **El sonido.** Efectos y música 8-bit que acompañan sin estorbar.
 6. **Las animaciones.** Que el personaje respire, salude, camine y cambie de edad.
@@ -85,7 +85,7 @@ Después del prompt inicial, cada fase fue una conversación de ida y vuelta: pe
 
 | Fase | Lo que pedí | Cómo lo ajusté |
 |---|---|---|
-| Estilo | Inspiración retro 8-bit, "algo de casa" y un personaje pixel art simple | Comparé varias paletas y decidí: *"me quedo con el naranja como actualmente está"* |
+| Estilo | Inspiración retro 8-bit, hogareño y un personaje pixel art simple | Comparé varias paletas y decidí. |
 | Modo noche | Opciones nostálgicas de modo nocturno | Elegí *Noche de lámparas*, con botón de sol y luna, automático según el dispositivo o la hora, que recuerde la elección y que la imagen descargable salga en ese modo |
 | Textos e historia | Narradora, más últimas veces, tres actos, una pausa, números a escala humana y una carta íntima | Pedí llevar la frase de cierre de la carta a la imagen descargable |
 | Sonido | Sonidos estilo 8-bit | Apagado por defecto, con música opcional |
@@ -95,7 +95,7 @@ Después del prompt inicial, cada fase fue una conversación de ida y vuelta: pe
 
 ### ¿Quieres hacer tu propia versión?
 
-Con lo que aprendí armé un **[kit de prompts](PROMPTS.md)**: nueve prompts más completos, uno por fase (Rol, Tarea, Contexto, Restricciones, Entrega y Criterios de aceptación), más uno para corregir errores y otro para continuar en una conversación nueva cuando se acaban los tokens. Los escribí al terminar, para que a otra persona le tome menos vueltas que a mí.
+Con lo que aprendí armé un **[kit de prompts](PROMPTS.md)**: nueve prompts más completos, uno por fase (Rol, Tarea, Contexto, Restricciones, Entrega y Criterios de aceptación), más uno para corregir errores y otro para continuar en una conversación nueva cuando se acaban los tokens.
 
 ## Errores que encontré y cómo los resolví
 
