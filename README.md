@@ -57,7 +57,57 @@ Fue creciendo por fases, y en cada una aprendí algo:
 7. **La usabilidad.** Selectores de fecha en español, poder saltar pasos, volver atrás, una barra de avance y que no pierdas tu avance si recargas la página.
 8. **El cierre.** El enlace para compartir, una auditoría general (accesibilidad, contraste de colores, HTML válido, pruebas en computadora y celular) y este README.
 
+### La herramienta: Claude
+
+Al principio pensé hacerlo en bolt.new, pero preferí trabajar con **Claude**: quería entender y controlar cada archivo, tener el código en mi propia carpeta y publicarlo gratis en GitHub Pages, sin depender de los créditos de una plataforma.
+
+**Cómo cuidé los límites de la conversación (tokens):** en lugar de pedir todo de golpe, trabajé por fases, con un objetivo claro en cada una. Al cerrar cada fase, el avance quedaba guardado en archivos, así cada nueva petición partía del código existente y no había que volver a explicarlo todo.
+
 Lo que más me llevo: el código fue la parte fácil de explicar. Lo difícil, y lo más bonito, fue decidir **qué** quería decir y **cómo** quería que se sintiera.
+
+## Los prompts
+
+### El prompt inicial
+
+Al arrancar le fui dando a Claude la idea en varios mensajes. Aquí la reúno en un solo prompt, con la estructura de Rol, Tarea, Contexto y Restricciones:
+
+> **Rol:** Actúa como desarrollador web front-end experto en HTML, CSS y JavaScript sin librerías, con buen ojo para el diseño, la accesibilidad y la escritura emotiva en español.
+>
+> **Tarea:** Construye una página web interactiva llamada "Tu vida en semanas" que muestre una vida de 80 años como una cuadrícula de 4,160 semanas, ilumine las "últimas veces" que solemos vivir sin darnos cuenta e invite a sembrar "primeras veces" en las semanas que quedan. Crea una carpeta para el proyecto y ve construyendo cada parte por separado.
+>
+> **Contexto:** Es mi proyecto final del Curso de Vibecoding. Está dirigido a cualquier persona adulta que quiera reflexionar sobre su tiempo, y debe sentirse cálido y nostálgico, no triste. Al inicio la página debe pedir el nombre, cómo quiere la persona que le hable (mujer, hombre o prefiero no decirlo) y su fecha de nacimiento, para personalizar la experiencia.
+>
+> **Restricciones:** Solo HTML, CSS y JavaScript, sin herramientas de compilación, para publicarla gratis en GitHub Pages. Estética retro 8-bit sutil y hogareña, con un personaje pixel art. Todo el texto en español de México. Que funcione en computadora y celular, y que ningún dato salga del navegador. Aplica buenas prácticas de código, organización y accesibilidad.
+
+### Cómo lo fui refinando
+
+Después del prompt inicial, cada fase fue una conversación de ida y vuelta: pedía algo, revisaba la vista previa en mi carpeta y ajustaba.
+
+| Fase | Lo que pedí | Cómo lo ajusté |
+|---|---|---|
+| Estilo | Inspiración retro 8-bit, "algo de casa" y un personaje pixel art simple | Comparé varias paletas y decidí: *"me quedo con el naranja como actualmente está"* |
+| Modo noche | Opciones nostálgicas de modo nocturno | Elegí *Noche de lámparas*, con botón de sol y luna, automático según el dispositivo o la hora, que recuerde la elección y que la imagen descargable salga en ese modo |
+| Textos e historia | Narradora, más últimas veces, tres actos, una pausa, números a escala humana y una carta íntima | Pedí llevar la frase de cierre de la carta a la imagen descargable |
+| Sonido | Sonidos estilo 8-bit | Apagado por defecto, con música opcional |
+| Animaciones | Que el personaje parpadee, respire, salude y camine por la cuadrícula | Que cambie de edad según el recuerdo |
+| Usabilidad | Fecha más fácil, saltar o sorprender con el personaje, tarjetas para las preguntas, botón de atrás, barra de avance y recordar el avance | Probé cada cambio en computadora y celular |
+| Cierre | Enlace para invitar a otra persona sin compartir sus datos, auditoría general y un README personal | Elegí el nombre `ultimas-veces` para el repositorio |
+
+## Errores que encontré y cómo los resolví
+
+Cuando algo fallaba, le describía a Claude lo que veía, le pedía corregirlo y explicarme por qué había pasado.
+
+| Lo que vi | Por qué pasaba | Cómo se resolvió |
+|---|---|---|
+| Las fuentes no cargaban al abrir la página como archivo | La precarga de fuentes usaba `crossorigin`, y el navegador bloquea esa petición (CORS) cuando la página se abre con `file://` | Se quitó la precarga y las fuentes se alojaron dentro del proyecto |
+| El ícono de sol y luna no cambiaba al cambiar de modo | La propiedad `.hidden` no existe en los elementos SVG, así que asignarla no hacía nada | Se usó `toggleAttribute("hidden")`, que sí funciona en SVG |
+| El personaje tapaba la semana iluminada | Su posición se calculaba sobre el cuadrito, encima del marco | Se subió 5 px: los 3 px del marco más 2 px de separación |
+| Al recargar no siempre se recuperaba el avance | Algunos navegadores guardan de forma poco confiable en `localStorage` cuando la página se abre como archivo | Se probó con un servidor local y en GitHub Pages, donde funciona bien |
+| El texto claro sobre el naranja se leía poco | Su contraste era de 3.1 a 1, y las pautas de accesibilidad (WCAG AA) piden al menos 4.5 a 1 | El naranja se quedó, pero el texto encima pasó a azul marino (4.95 a 1) |
+| Los botones de "¿Cómo quieres que te hable?" cortaban el texto | Una regla de CSS más específica (`.field label`) les quitaba el espacio interior | Se cambió a `.field > label` para que solo aplicara a las etiquetas directas |
+| Si alguien nacía esta semana, la carta decía "Ya viviste 0 semanas" | El texto no contemplaba ese caso límite | Se agregó un mensaje especial y el singular "1 semana" |
+
+Al final hice una auditoría general: HTML válido, revisión automática de accesibilidad sin errores en modo de día y de noche, y pruebas de todo el recorrido en computadora y celular, solo con teclado, con fechas especiales (29 de febrero, más de 80 años, nacimiento reciente) y en modo privado.
 
 ## Con qué está hecha
 
@@ -81,7 +131,7 @@ Para probar que el avance se recupera al recargar, ábrela con un servidor local
 ## Cómo está organizada
 
 ```
-vida-en-semanas/
+ultimas-veces/
 ├── index.html        Estructura de la página y los pasos
 ├── css/styles.css    Diseño: colores, tipografía, ventanas, cuadrícula y versión para celular
 ├── fonts/            Fuentes alojadas en el proyecto (con su licencia SIL OFL)
