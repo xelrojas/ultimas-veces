@@ -93,6 +93,10 @@ Después del prompt inicial, cada fase fue una conversación de ida y vuelta: pe
 | Usabilidad | Fecha más fácil, saltar o sorprender con el personaje, tarjetas para las preguntas, botón de atrás, barra de avance y recordar el avance | Probé cada cambio en computadora y celular |
 | Cierre | Enlace para invitar a otra persona sin compartir sus datos, auditoría general y un README personal | Elegí el nombre `ultimas-veces` para el repositorio |
 
+### ¿Quieres hacer tu propia versión?
+
+Con lo que aprendí armé un **[kit de prompts](PROMPTS.md)**: nueve prompts más completos, uno por fase (Rol, Tarea, Contexto, Restricciones, Entrega y Criterios de aceptación), más uno para corregir errores y otro para continuar en una conversación nueva cuando se acaban los tokens. Los escribí al terminar, para que a otra persona le tome menos vueltas que a mí.
+
 ## Errores que encontré y cómo los resolví
 
 Cuando algo fallaba, le describía a Claude lo que veía, le pedía corregirlo y explicarme por qué había pasado.
@@ -132,6 +136,7 @@ Para probar que el avance se recupera al recargar, ábrela con un servidor local
 
 ```
 ultimas-veces/
+├── PROMPTS.md        Kit de prompts para hacer tu propia versión
 ├── index.html        Estructura de la página y los pasos
 ├── css/styles.css    Diseño: colores, tipografía, ventanas, cuadrícula y versión para celular
 ├── fonts/            Fuentes alojadas en el proyecto (con su licencia SIL OFL)
